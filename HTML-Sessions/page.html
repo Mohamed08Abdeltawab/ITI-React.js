@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: #222">Student Information</h1>
+
+    <p style="text-align: center; color: #555">
+      Below is a list of students in our class
+      <small
+        >(Visit our <a href="#" style="color: #0066cc">school portal</a> for
+        details)</small
+      >
+    </p>
+
+    <hr />
+
+    <h3 style="color: #a00000">PART 1: STUDENT TABLE</h3>
+
+    <table
+      style="width: 100%; align-items: center; background-color: white"
+      cellpadding="6"
+      border="1"
+      ;
+    >
+      <tfoot>
+        <tr style="background-color: rgb(84, 147, 84)">
+          <td colspan="8" align="center">Total Students: 5</td>
+        </tr>
+      </tfoot>
+
+      <tbody>
+        <tr style="background-color: rgb(220, 220, 113)">
+          <td>1</td>
+          <td>Ahmed Ali</td>
+          <td>20</td>
+          <td>Male</td>
+          <td>HTML Basics</td>
+          <td>Cairo</td>
+          <td>Active</td>
+          <td>
+            <img
+              src="./lab1/images/mount_wallpaper.jpg"
+              alt="Ahmed Photo"
+              width="80"
+              height="35"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Mariam Ahmed</td>
+          <td>19</td>
+          <td>Female</td>
+          <td>CSS Basics</td>
+          <td>Giza</td>
+          <td>Active</td>
+          <td>
+            <img
+              src="./lab1/images/mount_wallpaper.jpg"
+              alt="Mariam Photo"
+              width="80"
+              height="35"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>Omar Hassan</td>
+          <td>21</td>
+          <td>Male</td>
+          <td>JavaScript Basics</td>
+          <td>Alexandria</td>
+          <td>Inactive</td>
+          <td>
+            <img
+              src="./lab1/images/mount_wallpaper.jpg"
+              alt="Omar Photo"
+              width="80"
+              height="35"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>Sara Mostafa</td>
+          <td>20</td>
+          <td>Female</td>
+          <td>HTML Basics</td>
+          <td>Cairo</td>
+          <td>Active</td>
+          <td>
+            <img
+              src="./lab1/images/mount_wallpaper.jpg"
+              alt="Sara Photo"
+              width="80"
+              height="35"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td>Hassan Mohamed</td>
+          <td>22</td>
+          <td>Male</td>
+          <td>Web Design</td>
+          <td>Mansoura</td>
+          <td>Active</td>
+          <td>
+            <img
+              src="./lab1/images/mount_wallpaper.jpg"
+              alt="Hassan Photo"
+              width="80"
+              height="35"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="color: red">Part2: Add New Student(from)</h3>
+    <p>Please fill in the information below to add a new student.</p>
+
+    <form action="https://www.google.com/" method="post">
+      <table border="1" cellpadding="6" width="100%">
+        <tr>
+          <td width="20%"><b>Full Name:</b></td>
+          <td>
+            <input type="text" placeholder="Enter full name" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Age:</b></td>
+          <td><input type="number" value="18" /></td>
+        </tr>
+
+        <tr>
+          <td><b>Gender:</b></td>
+          <td>
+            <input type="radio" id="male" name="gender" value="Male" />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" />
+            <label for="female">Female</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Course:</b></td>
+          <td>
+            <select style="width: 96%; padding: 4px">
+              <option>HTML Basics</option>
+              <option>CSS Basics</option>
+              <option>JavaScript Basics</option>
+              <option>Web Design</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>City:</b></td>
+          <td>
+            <select>
+              <option>-- Select City --</option>
+              <option>Cairo</option>
+              <option>Giza</option>
+              <option>Alexandria</option>
+              <option>Mansoura</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Email:</b></td>
+          <td>
+            <input type="email" placeholder="example@email.com" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Password:</b></td>
+          <td>
+            <input type="password" value="12345678" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Bio:</b></td>
+          <td>
+            <textarea placeholder="Write a short bio..." rows="3"></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Upload Photo:</b></td>
+          <td><input type="file" /></td>
+        </tr>
+
+        <tr>
+          <td><b>Subscribe:</b></td>
+          <td>
+            <input type="checkbox" /> <mark>Yes, subscribe to newsletter</mark>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Skills:</b></td>
+          <td>
+            <input type="checkbox" /> <b>HTML</b> &nbsp;
+            <input type="checkbox" /> <i>CSS</i> &nbsp;
+            <input type="checkbox" /> <u>JavaScript</u> &nbsp;
+            <input type="checkbox" /> <del>Design</del> &nbsp;
+            <input type="checkbox" /> <ins>Other</ins>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Start Date:</b></td>
+          <td><input type="date" /></td>
+        </tr>
+
+        <tr>
+          <td><b>Rating:</b> <sub>(1</sub><sup>-10)</sup></td>
+          <td>
+            <input type="range" min="1" max="10" value="5" style="width: 70%" />
+            <span>5</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Comments:</b></td>
+          <td>
+            <input type="text" placeholder="Any additional comments..." />
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Submit" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
