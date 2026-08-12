@@ -1,0 +1,86 @@
+/* 1 */
+p:only-child {
+  color: white;
+}
+
+/* 2 */
+input[type="number"] {
+  background-color: lightyellow;
+}
+
+/* 3 */
+li:nth-child(2) {
+  color: white;
+  background-color: green;
+}
+
+/* 4 */
+input:focus {
+  background-color: lightblue;
+}
+
+/* 5 */
+p.desc.special {
+  color: purple;
+}
+
+/* 6 */
+div:empty {
+  color: white;
+  background-color: gray;
+}
+
+/* 7 */
+input[name] {
+  background-color: lightcyan;
+}
+
+/* 8 */
+form p {
+  color: darkgreen;
+  background-color: lightgreen;
+}
+
+/* 9 */
+button:hover {
+  color: white;
+}
+
+/* 10 */
+.blog p:first-of-type::first-letter {
+  color: red;
+  background-color: yellow;
+}
+
+/* 11 */
+.feature-card:first-of-type ~ * {
+  background-color: teal;
+}
+
+/* 12 */
+div > p {
+  color: darkorange;
+}
+
+/* 13 */
+li::before{
+  content: "-> ";
+  color: blue;
+  background-color: lightgray;
+}
+
+/* 14 */
+.feature-card#f2 input{
+  background-color: pink;
+}
+
+/* 15 */
+main > section:nth-child(2){
+  color: black;
+  background-color: lightgoldenrodyellow;
+}
+
+/* 16  */
+a:visited{
+  color: purple;
+}

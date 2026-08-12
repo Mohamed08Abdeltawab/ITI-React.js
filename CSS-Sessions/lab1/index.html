@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Selectors Playground</title>
+
+    <!-- 3 Type to Connect CSS -->
+
+    <!-- 2. Internal CSS ❌ -->
+    <!-- CSS Selectors -->
+    <!-- <style>
+      p {
+        color: brown;
+      }
+    </style> -->
+
+    <!-- 3. External CSS ✅ -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+        HEADER
+    ========================== -->
+
+
+    <div id="d1">
+      <p id="pa1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente debitis impedit, voluptates quos quaerat officiis? Tempore voluptas consequuntur fuga sed, repellendus atque veritatis est quia facere veniam quasi? Minima, nemo?</p>
+
+      <h1>LLLLLL</h1>
+    </div>
+
+    <p class="para1" id="p1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio amet earum
+      repudiandae voluptate suscipit nobis inventore, voluptatibus officiis voluptatem
+      incidunt tenetur provident blanditiis! Repudiandae tenetur possimus enim eum nemo
+      earum?
+    </p>
+
+    <div>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <p>Paragraph 3</p>
+      <p>Paragraph 4</p>
+    </div>
+
+    <div>
+      <p>Only One</p>
+    </div>
+
+    <div>
+      <h1>Another Siblings</h1>
+      <p>Only One</p>
+    </div>
+
+    <header id="main-header" class="site-header">
+      <h1 class="highlight">CSS Selectors Playground</h1>
+
+      <!-- 1. Inline CSS ❌ -->
+      <!-- <p class="subtitle" style="color: red">
+        Practice different CSS selectors on this page.
+      </p> -->
+
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#courses">Courses</a>
+          </li>
+
+          <li class="highlight">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- =========================
+            HOME SECTION
+        ========================== -->
+
+      <section id="home" class="section">
+        <h2 class="highlight">Welcome</h2>
+
+        <p>This is a normal paragraph.</p>
+
+        <p class="highlight">This paragraph has the class highlight.</p>
+
+        <p class="highlight important">This paragraph has two classes.</p>
+
+        <div class="message">
+          <p>This paragraph is inside a div.</p>
+        </div>
+      </section>
+
+      <!-- =========================
+            COURSES SECTION
+        ========================== -->
+
+      <section id="courses" class="section courses-section">
+        <h2>Courses</h2>
+
+        <div class="course-list">
+          <article class="course featured" data-level="beginner">
+            <h3>HTML</h3>
+            <p>Learn the structure of web pages.</p>
+
+            <span class="badge">Beginner</span>
+
+            <a href="html.html" title="Learn HTML"> View Course </a>
+
+            <p>Next pages.</p>
+          </article>
+
+          <article class="course" data-level="intermediate">
+            <h3>CSS</h3>
+
+            <p>Learn how to style web pages.</p>
+
+            <span class="badge">Intermediate</span>
+
+            <div><a href="css.html" title="Learn CSS"> View Course </a></div>
+          </article>
+
+          <div class="course" data-level="advanced">
+            <h3>JavaScript</h3>
+
+            <p>Learn programming for the browser.</p>
+
+            <span class="badge">Advanced</span>
+
+            <div>
+              <a href="javascript.pdf" title="JavaScript Guide"> Download Guide </a>
+              <a href="java.pdf" title="Java Guide"> Download Guide </a>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+                necessitatibus voluptas soluta? Debitis labore inventore explicabo dolore
+                praesentium reprehenderit rerum hic adipisci. A, saepe laborum voluptatum
+                at accusamus fugiat mollitia?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+            LISTS
+        ========================== -->
+
+      <section class="section">
+        <h2>Topics</h2>
+
+        <ul id="topics">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li class="active">JavaScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+        </ul>
+
+        <h3>Steps</h3>
+
+        <ol class="steps">
+          <li>Learn HTML</li>
+          <li>Learn CSS</li>
+          <li>Learn JavaScript</li>
+        </ol>
+      </section>
+
+      <!-- =========================
+            SIBLING RELATIONSHIPS
+        ========================== -->
+
+      <section class="section">
+        <h2>Articles</h2>
+
+        <h3>First Article</h3>
+
+        <p>Paragraph immediately after the heading.</p>
+
+        <p>Another paragraph after the heading.</p>
+
+        <h3>Second Article</h3>
+
+        <div>This div comes after the second heading.</div>
+      </section>
+
+      <!-- =========================
+            FORM
+        ========================== -->
+
+      <section id="contact" class="section">
+        <h2>Contact Form</h2>
+
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+
+            <input type="number" id="age" name="age" min="18" max="60" />
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+
+            <input type="text" id="username" name="username" value="student" readonly />
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+
+            <select id="country" name="country">
+              <option value="">Select Country</option>
+
+              <option value="egypt">Egypt</option>
+
+              <option value="usa">USA</option>
+
+              <option value="uk">UK</option>
+            </select>
+          </div>
+
+          <fieldset>
+            <legend>Learning Mode</legend>
+
+            <label>
+              <input type="radio" name="mode" value="online" checked />
+              Online
+            </label>
+
+            <label>
+              <input type="radio" name="mode" value="offline" />
+              Offline
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Technologies</legend>
+
+            <label>
+              <input type="checkbox" name="technology" value="html" checked />
+              HTML
+            </label>
+
+            <label>
+              <input type="checkbox" name="technology" value="css" />
+              CSS
+            </label>
+
+            <label>
+              <input type="checkbox" name="technology" value="javascript" />
+              JavaScript
+            </label>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="message"> Message </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message"></textarea>
+          </div>
+
+          <button type="submit">Send</button>
+
+          <button type="button" disabled>Disabled Button</button>
+        </form>
+      </section>
+
+      <!-- =========================
+            ATTRIBUTES
+        ========================== -->
+
+      <section class="section attributes">
+        <h2>Attribute Selector Examples</h2>
+
+        <a href="https://example.com"> External Website </a>
+
+        <a href="about.html"> About Page </a>
+
+        <a href="document.pdf"> PDF Document </a>
+
+        <a href="https://example.com/course"> Secure Course Link </a>
+
+        <p data-category="web">Web Development</p>
+
+        <p data-category="mobile">Mobile Development</p>
+
+        <p data-category="web frontend">Frontend Web Development</p>
+
+        <div lang="en">English Content</div>
+
+        <div lang="en-US">American English Content</div>
+      </section>
+
+      <!-- =========================
+            NESTING
+        ========================== -->
+
+      <section class="section">
+        <h2>Nested Elements</h2>
+
+        <div class="parent">
+          <p>Direct child paragraph</p>
+
+          <div class="child">
+            <p>Nested descendant paragraph</p>
+
+            <span> Nested span </span>
+          </div>
+
+          <p>Another direct child paragraph</p>
+        </div>
+      </section>
+
+      <!-- =========================
+            EMPTY ELEMENT
+        ========================== -->
+
+      <section class="section">
+        <h2>Empty Elements</h2>
+
+        <div class="empty-box"></div>
+
+        <div class="not-empty-box">I contain content.</div>
+      </section>
+
+      <!-- =========================
+            PSEUDO ELEMENT CONTENT
+        ========================== -->
+
+      <section class="section">
+        <h2>Pseudo-elements</h2>
+
+        <p class="pseudo-demo">
+          This paragraph can be used to practice first-letter, first-line, before and
+          after.
+        </p>
+      </section>
+    </main>
+
+    <!-- =========================
+        FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+      <p>Copyright 2026</p>
+
+      <a href="#main-header"> Back to Top </a>
+    </footer>
+  </body>
+</html>
