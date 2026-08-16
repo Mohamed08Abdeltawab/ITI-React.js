@@ -1,0 +1,145 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-heading {
+  font-size: 2rem;
+  font-weight: 100px;
+  text-align: center;
+}
+
+/* 2 & 3 */
+.profile-card {
+  width: 300px;
+  padding: 20px 40px;
+  border: 2px solid blue;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  position: relative;
+  transition: transform .3s ease;
+}
+
+.profile-card:hover{
+  transform: scale(1.05);
+}
+
+/* 3 */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid rgb(27, 165, 27);
+  padding: 5px;
+  border-radius: 10px;
+  background-color: orange;
+  transition: background-color .5s ease;
+}
+
+.badge:hover {
+  cursor: pointer;
+  background-color: brown;
+}
+
+/* 3 */
+.help-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 2px solid yellowgreen;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgb(190, 255, 60);
+  transition: background-color .5s ease;
+}
+
+.help-box:hover {
+  cursor: pointer;
+  background-color: rgb(7, 184, 69);
+}
+
+/* 4 */
+.description-box {
+  width: 240px;
+  height: 150px;
+  overflow: auto;
+  /* border-radius: 10px; */
+  border: 2px solid #b2adad;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.profile-image {
+  float: left;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.welcome-banner{
+  border: 2px solid brown;
+  width: 15ch;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 30px;
+  background-color: rgb(166, 252, 255);
+  border-radius: 10px;
+  animation: floatAnimation 2s ease-in-out infinite ;
+}
+
+@keyframes floatAnimation{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-8px);
+  }
+  110%{
+    transform: translateY(0);
+  }
+}
+
+
+.action-btn{
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+  color: #e0e0e0;
+}
+
+.skills-list {
+  margin: 12px 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #444444;
+}
+
+.profile-link{
+  font-size: larger;
+  transition: color .3s ease;
+}
+
+.profile-link:hover{
+  color: #0056b3;
+}

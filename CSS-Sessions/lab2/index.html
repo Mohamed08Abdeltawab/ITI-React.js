@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card Webpage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Task 8: Animated Welcome Notification -->
+  <div class="welcome-banner">Welcome!</div>
+
+  <!-- Task 1: Page Heading -->
+  <h1 class="main-heading">User Profile</h1>
+
+  <!-- Task 2, 3, 7: Profile Card Container -->
+  <div class="profile-card">
+    
+    <!-- Task 3: Absolute Positioned Badge -->
+    <span class="badge">NEW</span>
+
+    <!-- Task 5: Floated Profile Image -->
+    <img src="pi.jpeg" alt="" class="profile-image">
+
+    <!-- Task 4 & 5: Overflow Description Box -->
+    <div class="description-box">
+      <p>
+        Frontend developer passionate about building accessible, responsive, and performant web applications. 
+        Constantly exploring modern CSS techniques, animations, layout engines, and interactive web architecture. 
+        Experienced in turning complex design mockups into pixel-perfect code with clean semantics and efficient styling.
+      </p>
+    </div>
+
+    <!-- Clearfix for floated element -->
+    <div class="clear">
+    </div>
+
+    <!-- List of Skills & Unstyled Link -->
+    <h3>Skills</h3>
+    <ul class="skills-list">
+      <li>HTML5 & Semantic Markup</li>
+      <li>CSS3 (Flexbox, Grid, Animations)</li>
+      <li>JavaScript & UI Design</li>
+    </ul>
+
+    <p>
+      <a href="#portfolio" class="profile-link">View Portfolio</a>
+    </p>
+
+    <!-- Task 6: Interactive Button -->
+    <button class="action-btn">Connect</button>
+  </div>
+
+  <!-- Task 3: Fixed Help Box -->
+  <div class="help-box">Help ?</div>
+
+</body>
+</html>
