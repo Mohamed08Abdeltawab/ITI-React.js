@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Async & API Tasks</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>JavaScript API & ES6 Tasks</h1>
+    </header>
+
+    <section class="card">
+      <h2>1. Spread Operator Demo</h2>
+      <button id="btn-spread" class="btn">Run Spread Operator</button>
+      <div id="spread-output" class="output-box">Click the button to test spread operator.</div>
+    </section>
+
+    <section class="card">
+      <h2>2 & 3. Users Directory</h2>
+      <div class="button-group">
+        <button id="btn-fetch-users" class="btn btn-secondary">Load Users (fetch)</button>
+        <button id="btn-axios-users" class="btn btn-secondary">Load Users (axios)</button>
+      </div>
+
+      <div class="control-row">
+        <select id="user-select" class="dropdown">
+          <option value="">-- Select a User --</option>
+        </select>
+        <button id="btn-show-user" class="btn" disabled>Show Details</button>
+      </div>
+
+      <div id="user-details-card" class="details-card hidden">
+        <img id="user-image" src="" alt="User Avatar" />
+        <div class="user-info">
+          <h3 id="user-name"></h3>
+          <p><strong>Email:</strong> <span id="user-email"></span></p>
+          <p><strong>Phone:</strong> <span id="user-phone"></span></p>
+          <p><strong>Company:</strong> <span id="user-company"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>4 & 5. Add New Post</h2>
+      <div class="button-group">
+        <button id="btn-fetch-post" class="btn btn-primary">Add Post (fetch)</button>
+        <button id="btn-axios-post" class="btn btn-primary">Add Post (axios)</button>
+      </div>
+      <div id="post-output" class="output-box">Post response status will appear here.</div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
