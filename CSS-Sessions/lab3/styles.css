@@ -1,0 +1,138 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      color: #111;
+      line-height: 1.5;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      min-height: 100vh;
+      padding: 15px;
+      background-color: #fff;
+    }
+
+    /* Base Styling for Containers */
+    header, nav, aside, main, article, figure, p, section, footer {
+      border: 1px solid #222;
+      padding: 14px;
+    }
+
+    header {
+      background-color: #111;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      background-color: #e5e5e5;
+    }
+
+    nav a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Content Area */
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    aside {
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    aside ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    aside li {
+      padding: 6px 8px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background-color: #fafafa;
+      flex: 3;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #eaeaea;
+    }
+
+    figure {
+      margin: 0;
+      background-color: #fff;
+      font-style: italic;
+      font-size: 0.85rem;
+    }
+
+    main p {
+      background-color: #fff;
+    }
+
+    section {
+      background-color: #222;
+      color: #fff;
+    }
+
+    section p {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      margin-top: 8px;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* Desktop View */
+    @media (min-width: 768px) {
+      .content-wrapper {
+        flex-direction: row;
+      }
+
+      aside {
+        flex: 1;
+      }
+    }

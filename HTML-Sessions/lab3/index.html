@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 & Canvas Lab Solutions (Pure HTML & JS)</title>
+  </head>
+  <body>
+    <!-- ================= Task 1: Semantic Elements ================= -->
+    <h2>Task 1: HTML5 Semantic Elements</h2>
+    <p>
+      Time: <time datetime="2026-10-15T18:00">October 15, 2026 at 6:00 PM</time>
+    </p>
+    <p>Mark: This is a <mark>highlighted keyword</mark> in the text.</p>
+    <p>
+      Meter:
+      <meter min="0" max="100" low="30" high="80" optimum="50" value="65">
+        65%
+      </meter>
+    </p>
+    <p>Progress: <progress value="45" max="100">45%</progress></p>
+
+    <hr />
+
+    <!-- ================= Task 2: Star Rating Control ================= -->
+    <h2>Task 2: Star Rating Control</h2>
+    <p>Hover to fill, click to fix, re-click to unfix:</p>
+    <div id="starContainer">
+      <img
+        src="./images.jpg"
+        class="star"
+        data-index="1"
+        data-fixed="false"
+        width="40"
+        height="40"
+        alt="Star 1"
+      />
+      <img
+        src="./images.jpg"
+        class="star"
+        data-index="2"
+        data-fixed="false"
+        width="40"
+        height="40"
+        alt="Star 2"
+      />
+      <img
+        src="./images.jpg"
+        class="star"
+        data-index="3"
+        data-fixed="false"
+        width="40"
+        height="40"
+        alt="Star 3"
+      />
+      <img
+        src="./images.jpg"
+        class="star"
+        data-index="4"
+        data-fixed="false"
+        width="40"
+        height="40"
+        alt="Star 4"
+      />
+      <img
+        src="./images.jpg"
+        class="star"
+        data-index="5"
+        data-fixed="false"
+        width="40"
+        height="40"
+        alt="Star 5"
+      />
+    </div>
+
+    <hr />
+
+    <!-- ================= Task 3: Video & Audio ================= -->
+    <h2>Task 3: Audio and Video</h2>
+    <h3>Audio</h3>
+    <audio controls>
+      <source src="sample.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <h3>Video</h3>
+    <video width="400" height="250" controls>
+      <source src="sample.mp4" type="video/mp4" />
+      Your browser does not support the video element.
+    </video>
+
+    <hr />
+
+    <!-- ================= Task 4: SVG Circle ================= -->
+    <h2>Task 4: SVG Circle Interaction</h2>
+    <svg width="200" height="200">
+      <circle
+        id="mySvgCircle"
+        cx="100"
+        cy="100"
+        r="50"
+        fill="blue"
+        stroke="black"
+        stroke-width="3"
+      />
+    </svg>
+
+    <hr />
+
+    <!-- ================= Task 5: Canvas Face Swap & Scaling ================= -->
+    <h2>Task 5: Canvas Face Swap & Scaling</h2>
+    <canvas id="faceCanvas" width="300" height="200"></canvas>
+
+    <hr />
+
+    <!-- ================= Task 6: Canvas Draw & Erase ================= -->
+    <h2>Task 6: Canvas Circle, Gradient Name, Draw & Erase</h2>
+    <p>Left Click & Drag: Draw | Right Click & Drag: Erase</p>
+    <canvas id="paintCanvas" width="600" height="400"></canvas>
+
+    <!-- ================= JavaScript ================= -->
+    <script>
+      // ---------- Task 2: Star Rating Logic ----------
+      const stars = document.querySelectorAll(".star");
+      const EMPTY_SRC = "empty_star.png";
+      const FILLED_SRC = "filled_star.png";
+      let currentRating = 0;
+
+      function renderStars(upToIndex) {
+        stars.forEach((star) => {
+          const idx = parseInt(star.dataset.index);
+          star.src = idx <= upToIndex ? FILLED_SRC : EMPTY_SRC;
+        });
+      }
+
+      stars.forEach((star) => {
+        // (a) Mouseover
+        star.addEventListener("mouseover", () => {
+          renderStars(parseInt(star.dataset.index));
+        });
+
+        // (b) Mouseout
+        star.addEventListener("mouseout", () => {
+          renderStars(currentRating);
+        });
+
+        // (c & d) Click & Re-click
+        star.addEventListener("click", () => {
+          const clickedIndex = parseInt(star.dataset.index);
+          if (star.dataset.fixed === "true" && currentRating === clickedIndex) {
+            currentRating = 0;
+            stars.forEach((s) => (s.dataset.fixed = "false"));
+          } else {
+            currentRating = clickedIndex;
+            stars.forEach((s) => {
+              const sIdx = parseInt(s.dataset.index);
+              s.dataset.fixed = sIdx <= currentRating ? "true" : "false";
+            });
+          }
+          renderStars(currentRating);
+        });
+      });
+
+      // ---------- Task 4: SVG Circle Events ----------
+      const svgCircle = document.getElementById("mySvgCircle");
+
+      // mouseover: change color and style
+      svgCircle.addEventListener("mouseover", () => {
+        svgCircle.setAttribute("fill", "green");
+        svgCircle.setAttribute("stroke", "darkgreen");
+        svgCircle.setAttribute("stroke-width", "8");
+      });
+
+      // mouseout: reset
+      svgCircle.addEventListener("mouseout", () => {
+        svgCircle.setAttribute("fill", "blue");
+        svgCircle.setAttribute("stroke", "black");
+        svgCircle.setAttribute("stroke-width", "3");
+      });
+
+      // mousedown: change color and style
+      svgCircle.addEventListener("mousedown", () => {
+        svgCircle.setAttribute("fill", "red");
+        svgCircle.setAttribute("stroke", "darkred");
+        svgCircle.setAttribute("stroke-width", "12");
+      });
+
+      // mouseup: alert text
+      svgCircle.addEventListener("mouseup", () => {
+        alert("SVG Circle MouseUp Alert!");
+        svgCircle.setAttribute("fill", "green");
+        svgCircle.setAttribute("stroke", "darkgreen");
+        svgCircle.setAttribute("stroke-width", "8");
+      });
+
+      // ---------- Task 5: Canvas Face Swap & Scaling ----------
+      const faceCanvas = document.getElementById("faceCanvas");
+      const faceCtx = faceCanvas.getContext("2d");
+
+      const sadImg = new Image();
+      sadImg.src = "sad.png";
+
+      const smileyImg = new Image();
+      smileyImg.src = "smiley.png";
+
+      function drawFace(img, scaleWidth = 1) {
+        faceCtx.clearRect(0, 0, faceCanvas.width, faceCanvas.height);
+        const baseW = 120;
+        const baseH = 120;
+        const w = baseW * scaleWidth;
+        const h = baseH;
+        const x = (faceCanvas.width - w) / 2;
+        const y = (faceCanvas.height - h) / 2;
+        faceCtx.drawImage(img, x, y, w, h);
+      }
+
+      sadImg.onload = () => drawFace(sadImg, 1);
+
+      faceCanvas.addEventListener("mousedown", () => {
+        drawFace(smileyImg, 1.5);
+      });
+
+      faceCanvas.addEventListener("mouseup", () => {
+        drawFace(sadImg, 1);
+      });
+
+      // ---------- Task 6: Canvas Draw & Erase ----------
+      const paintCanvas = document.getElementById("paintCanvas");
+      const pCtx = paintCanvas.getContext("2d");
+
+      // 1. Semi-transparent circle
+      pCtx.beginPath();
+      pCtx.arc(300, 200, 130, 0, Math.PI * 2);
+      pCtx.fillStyle = "rgba(0, 0, 255, 0.3)";
+      pCtx.fill();
+      pCtx.stroke();
+
+      // 2. Gradient Name
+      const grad = pCtx.createLinearGradient(150, 0, 450, 0);
+      grad.addColorStop(0, "red");
+      grad.addColorStop(0.5, "yellow");
+      grad.addColorStop(1, "blue");
+
+      pCtx.font = "bold 40px Arial";
+      pCtx.fillStyle = grad;
+      pCtx.textAlign = "center";
+      pCtx.textBaseline = "middle";
+      pCtx.fillText("Mohamed", 300, 200);
+
+      // 3. Draw & Erase
+      let isDrawing = false;
+      let buttonType = null;
+
+      paintCanvas.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      paintCanvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        buttonType = e.button;
+        pCtx.beginPath();
+        pCtx.moveTo(e.offsetX, e.offsetY);
+      });
+
+      paintCanvas.addEventListener("mousemove", (e) => {
+        if (!isDrawing) return;
+        if (buttonType === 0) {
+          // Left click: draw
+          pCtx.strokeStyle = "black";
+          pCtx.lineWidth = 3;
+          pCtx.lineTo(e.offsetX, e.offsetY);
+          pCtx.stroke();
+        } else if (buttonType === 2) {
+          // Right click: erase
+          pCtx.clearRect(e.offsetX - 10, e.offsetY - 10, 20, 20);
+        }
+      });
+
+      const stopPaint = () => {
+        isDrawing = false;
+        pCtx.beginPath();
+      };
+
+      paintCanvas.addEventListener("mouseup", stopPaint);
+      paintCanvas.addEventListener("mouseleave", stopPaint);
+    </script>
+  </body>
+</html>
