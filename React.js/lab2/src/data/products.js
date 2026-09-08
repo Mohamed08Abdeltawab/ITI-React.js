@@ -8,7 +8,7 @@ export const products = [
     category: "Electronics",
     status: "In Stock",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&q=80",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const products = [
     category: "Clothing",
     status: "Low Stock",
     image:
-      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&q=80",
+      "",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const products = [
     category: "Electronics",
     status: "Out of Stock",
     image:
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80",
+      "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500&q=80",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const products = [
     category: "Footwear",
     status: "In Stock",
     image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
+      "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=500&q=80",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const products = [
     category: "Electronics",
     status: "Low Stock",
     image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
+      "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&q=80",
   },
   {
     id: 6,
@@ -63,6 +63,6 @@ export const products = [
     category: "Accessories",
     status: "Out of Stock",
     image:
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80",
   },
 ];
